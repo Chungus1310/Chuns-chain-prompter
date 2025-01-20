@@ -1,0 +1,54 @@
+version: "3.1"
+stories:
+- story: text generation path
+  steps:
+  - intent: text_generation
+  - action: action_ask_clarification_text_generation
+  - intent: affirm
+  - action: action_call_llm
+
+- story: question answering path
+  steps:
+  - intent: question_answering
+  - action: action_ask_clarification_question_answering
+  - intent: affirm
+  - action: action_call_llm
+
+- story: data analysis path
+  steps:
+  - intent: data_analysis
+  - action: action_ask_clarification_data_analysis
+  - intent: affirm
+  - action: action_call_llm
+
+- story: clarification denied
+  steps:
+  - action: action_ask_clarification_text_generation # Or any other clarification action
+  - intent: deny
+  - action: action_default_fallback
+
+- story: stream output path
+  steps:
+  - intent: text_generation
+  - action: action_ask_clarification_text_generation
+  - intent: affirm
+  - slot_was_set:
+      - stream_output: true
+  - action: action_call_llm
+
+- story: model selection path
+  steps:
+  - intent: text_generation
+  - slot_was_set:
+      - model_type: "gemini"
+  - action: action_ask_clarification_text_generation
+  - intent: affirm
+  - action: action_call_llm
+
+- story: error handling path
+  steps:
+  - intent: text_generation
+  - action: action_ask_clarification_text_generation
+  - intent: affirm
+  - action: action_call_llm
+  - action: action_handle_error

@@ -1,0 +1,74 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: text_generation
+  examples: |
+    - write a story about [a cat](topic)
+    - create a poem about [the ocean](topic) in the style of [Shakespeare](style)
+    - generate a [short](length) story about [a dog and a ball](topic) for [education](domain)
+    - write a [marketing](domain) email about [a new product](topic)
+    - I need a [long](length) story about [a dragon](topic) for [education](domain)
+    - use [gemini](model_type) to write about [space](topic)
+    - generate with [gpt](model_type) a [technical](style) document about [AI](topic)
+    - stream a story about [dragons](topic)
+    - create a [marketing](domain) text using [mistral](model_type)
+
+- intent: question_answering
+  examples: |
+    - answer the question: [What is the capital of France?](question)
+    - I have a question about [marketing](domain): [How to increase sales?](question)
+    - can you answer this for [education](domain): [What is photosynthesis?](question)
+    - answer this [data analysis](domain) question: [What are the key metrics?](question)
+
+- intent: data_analysis
+  examples: |
+    - analyze this data: [sales_data.csv](data_file)
+    - perform data analysis on [customer_data.csv](data_file) for [marketing](domain)
+    - I need a [data analysis](domain) report on [this data](data_file)
+    - analyze [this](data_file) for [education](domain)
+
+- intent: model_selection
+  examples: |
+    - use [gemini](model_type) model
+    - switch to [gpt](model_type)
+    - try with [mistral](model_type)
+    - change model to [llama](model_type)
+
+- intent: stream_output
+  examples: |
+    - show me the output as it generates
+    - stream the response
+    - generate with streaming
+    - I want to see the output in real-time

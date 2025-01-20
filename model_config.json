@@ -1,0 +1,93 @@
+{
+    "tasks": {
+        "question_generation": {
+            "default": [
+                "hf:mistralai/Mistral-Nemo-Instruct-2407",
+                "openrouter:mistralai/mistral-7b-instruct:free",
+                "gemini:gemini-1.5-flash"
+            ],
+            "education": [
+                "gemini:gemini-1.5-flash",
+                "hf:mistralai/Mistral-Nemo-Instruct-2407"
+            ]
+        },
+        "text_generation": {
+            "default": [
+                "hf:mistralai/Mistral-Nemo-Instruct-2407",
+                "hf:01-ai/Yi-1.5-34B-Chat",
+                "openrouter:mistralai/mistral-7b-instruct:free",
+                "openrouter:google/gemma-2-9b-it:free",
+                "gemini:gemini-1.5-flash"
+            ]
+        },
+        "question_answering": {
+            "default": [
+                "hf:01-ai/Yi-1.5-34B-Chat",
+                "openrouter:google/gemma-2-9b-it:free",
+                "gemini:gemini-1.5-flash"
+            ]
+        },
+        "data_analysis": {
+            "default": [
+                "hf:01-ai/Yi-1.5-34B-Chat",
+                "openrouter:mistralai/mistral-7b-instruct:free",
+                "gemini:gemini-1.5-flash"
+            ]
+        }
+    },
+    "model_priorities": {
+        "text_generation": {
+            "primary": "gemini:gemini-1.5-flash",
+            "fallbacks": [
+                "hf:mistralai/Mistral-Nemo-Instruct-2407",
+                "openrouter:mistralai/mistral-7b-instruct:free"
+            ]
+        },
+        "question_answering": {
+            "primary": "gemini:gemini-1.5-flash",
+            "fallbacks": [
+                "hf:mistralai/Mistral-Nemo-Instruct-2407",
+                "openrouter:mistralai/mistral-7b-instruct:free"
+            ]
+        },
+        "question_generation": {
+            "primary": "gemini:gemini-1.5-flash",
+            "fallbacks": [
+                "hf:mistralai/Mistral-Nemo-Instruct-2407",
+                "openrouter:mistralai/mistral-7b-instruct:free"
+            ]
+        },
+        "data_analysis": {
+            "primary": "gemini:gemini-1.5-flash",
+            "fallbacks": [
+                "hf:01-ai/Yi-1.5-34B-Chat"
+            ]
+        },
+        "default": {
+            "primary": "hf:mistralai/Mistral-Nemo-Instruct-2407",
+            "fallbacks": [
+                "hf:01-ai/Yi-1.5-34B-Chat",
+                "openrouter:mistralai/mistral-7b-instruct:free",
+                "openrouter:google/gemma-2-9b-it:free",
+                "gemini:gemini-1.5-flash"
+            ]
+        }
+    },
+    "domain_defaults": {
+        "education": {
+            "temperature": 0.7,
+            "max_tokens": 2000,
+            "preferred_model": "hf:01-ai/Yi-1.5-34B-Chat"
+        },
+        "marketing": {
+            "temperature": 0.8,
+            "max_tokens": 500,
+            "preferred_model": "hf:mistralai/Mistral-Nemo-Instruct-2407"
+        },
+        "data_analysis": {
+            "temperature": 0.5,
+            "max_tokens": 3000,
+            "preferred_model": "hf:01-ai/Yi-1.5-34B-Chat"
+        }
+    }
+}

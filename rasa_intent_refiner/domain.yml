@@ -1,0 +1,81 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - text_generation
+  - question_answering
+  - data_analysis
+  - model_selection
+  - stream_output
+
+entities:
+  - topic
+  - style
+  - length
+  - domain
+  - model_type
+  - data_file
+  - question
+
+slots:
+  topic:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: topic
+  style:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: style
+  length:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: length
+  domain:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: domain
+  model_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: model_type
+  stream_output:
+    type: bool
+    mappings:
+    - type: from_intent
+      intent: stream_output
+      value: true
+  data_file:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: data_file
+  question:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: question
+
+responses:
+  utter_greet:
+  - text: "Hello! How can I help you today?"
+  
+  utter_goodbye:
+  - text: "Goodbye! Have a great day!"
+
+  utter_default:
+  - text: "I'm not sure how to help with that. Could you rephrase?"
+
+actions:
+  - action_ask_clarification_text_generation
+  - action_ask_clarification_question_answering
+  - action_ask_clarification_data_analysis
+  - action_call_llm
+  - action_handle_error

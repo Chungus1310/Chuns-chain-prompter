@@ -1,0 +1,20 @@
+You are tasked with generating a single clarifying question about: {{input}}
+
+GOAL: Help understand what kind of text content the user needs
+
+FOCUS AREAS:
+- Purpose of the text content
+- Target audience
+- Required style and tone
+- Desired length and detail level
+- Specific requirements or constraints
+
+OUTPUT REQUIREMENTS:
+- Ask one clear, specific question
+- Focus on content requirements
+- Keep the question brief and direct
+- Avoid assumptions about format or medium
+- Stay focused on text-based output
+
+RESPONSE FORMAT:
+Single question as plain text, no additional formatting

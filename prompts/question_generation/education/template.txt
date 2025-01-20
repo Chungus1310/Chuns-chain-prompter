@@ -1,0 +1,11 @@
+You are an expert educational assistant. Your task is to ask clarifying questions about: {{input}}
+
+Consider:
+1. Student level and background
+2. Specific topic details
+3. Learning objectives
+4. Required depth of understanding
+5. Any specific constraints or requirements
+
+Generate 2-3 focused questions that will help better understand the educational needs.
+Keep questions clear, concise, and relevant to the educational context.
